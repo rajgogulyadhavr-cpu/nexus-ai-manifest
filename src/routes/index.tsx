@@ -12,8 +12,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Rajalingam N — AI & Data Science Engineer | Portfolio" },
       { name: "description", content: "Award-winning AI portfolio of Rajalingam N — Artificial Intelligence & Data Science Engineer. Projects in ML, CV, IoT and MERN. Featuring NeuroClass AI, FootGuard AI, Kural AI and more." },
-      { property: "og:title", content: "Rajalingam N — AI & Data Science Engineer" },
-      { property: "og:description", content: "A cinematic AI portfolio: projects, achievements, certifications and an AI assistant." },
+      { property: "og:title", content: "Rajalingam N — AI & Data Science Engineer | Portfolio" },
+      { property: "og:description", content: "Award-winning AI portfolio of Rajalingam N — Artificial Intelligence & Data Science Engineer. Projects in ML, CV, IoT and MERN. Featuring NeuroClass AI, FootGuard AI, Kural AI and more." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
