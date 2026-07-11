@@ -79,7 +79,7 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const { messages } = (await request.json()) as { messages?: UIMessage[] };
+        const { messages } = (await request.json()) as { messages?: ChatMsg[] };
         if (!Array.isArray(messages)) return new Response("Bad Request", { status: 400 });
 
         const key = process.env.LOVABLE_API_KEY;
@@ -89,9 +89,9 @@ export const Route = createFileRoute("/api/chat")({
         const result = streamText({
           model: gateway("google/gemini-3-flash-preview"),
           system: CONTEXT,
-          messages: await convertToModelMessages(messages),
+          messages: messages.map((m) => ({ role: m.role, content: m.content })),
         });
-        return result.toUIMessageStreamResponse({ originalMessages: messages });
+        return result.toTextStreamResponse();
       },
     },
   },
