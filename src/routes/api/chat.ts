@@ -1,6 +1,8 @@
 import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
 import { createFileRoute } from "@tanstack/react-router";
-import { convertToModelMessages, streamText, type UIMessage } from "ai";
+import { streamText } from "ai";
+
+type ChatMsg = { role: "user" | "assistant" | "system"; content: string };
 
 const CONTEXT = `You are RG InfoBot, the personal AI assistant of Rajalingam N.
 Answer ONLY using the information provided below. If a question cannot be answered from this information,
